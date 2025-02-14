@@ -7,7 +7,25 @@ using System.Threading.Tasks;
 
 namespace PrjHelloWorld.Models
 {
-    internal class PessoaFisica : Pessoa
+    public class PessoaFisica : Pessoa
     {
+        private string _cpf;
+        public string Cpf
+        {
+            get { return _cpf; }
+            set
+            {
+                if (value.Length != 11)
+                {
+
+                    throw new Exception("Cpf Inválido!");
+                }
+                _cpf = value;
+            }
+        }
+        public PessoaFisica(string pNome, int pIdade, string pCpf) : base(pNome, pIdade)
+        {
+            Cpf = pCpf;
+        }
     }
 }

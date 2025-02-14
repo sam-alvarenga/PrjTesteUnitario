@@ -69,7 +69,7 @@ namespace PrjHelloWorldTeste
             Exception resultado = Assert.ThrowsException<Exception>(() => new Pessoa("Pedro", -1));
             Assert.AreEqual("Erro: Idade inválida", resultado.Message);
 
-            
+            PessoaJuridica pj = new PessoaJuridica("Bruno", 100, "11111111111111");
 
 
         }
